@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "motion/react";
 import { Check, Send } from "lucide-react";
-import backgroundImage from "figma:asset/d408225078b16f1b9a92b2142a16ad00cc8254f2.png";
 
 export const RsvpSection: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -50,7 +49,6 @@ export const RsvpSection: React.FC = () => {
       ref={sectionRef}
       className="relative min-h-screen w-full py-20 px-6 overflow-hidden"
       style={{
-        backgroundImage: `url(${backgroundImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",

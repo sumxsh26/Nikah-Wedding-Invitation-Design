@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import backgroundImage from 'figma:asset/d408225078b16f1b9a92b2142a16ad00cc8254f2.png';
-import lilyImage from 'figma:asset/74db44036b298e05870ab65e2bc167426523a2db.png';
+//import lilyImage from '../../assets/flower.png';
 
 interface HeroSectionProps {
   onScrollToDetails: () => void;
@@ -61,14 +60,6 @@ const FloatingLily: React.FC<{
         repeatType: "reverse",
       }}
     >
-      <img 
-        src={lilyImage} 
-        alt=""
-        className="w-full h-full object-cover opacity-90 drop-shadow-lg"
-        style={{
-          filter: 'saturate(0.85) brightness(1.1)',
-        }}
-      />
     </motion.div>
   );
 };
@@ -162,7 +153,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onScrollToDetails }) =
     <section 
       className="relative min-h-screen w-full flex items-center justify-center overflow-hidden"
       style={{
-        backgroundImage: `url(${backgroundImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
@@ -171,7 +161,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onScrollToDetails }) =
       {/* Overlay to darken background slightly */}
       <div className="absolute inset-0 bg-[#3b010b]/40 z-0" />
       
-      {/* Initial covering lilies */}
+      {/* Initial covering lilies 
       {initialLilies.map((lily, index) => (
         <FloatingLily
           key={`initial-${index}`}
@@ -183,8 +173,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onScrollToDetails }) =
           initialY={lily.y}
         />
       ))}
+        
 
-      {/* Background floating lilies (subtle, after reveal) */}
+      
       {showContent && backgroundLilies.map((lily, index) => (
         <BackgroundLily
           key={`bg-${index}`}
@@ -193,7 +184,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onScrollToDetails }) =
           x={lily.x}
           y={lily.y}
         />
-      ))}
+      ))}*/}
 
       {/* Main content */}
       <AnimatePresence>
@@ -208,7 +199,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onScrollToDetails }) =
             <motion.p
               className="text-[#f2e5c6] opacity-80 mb-8"
               style={{
-                fontSize: '14px',
+                fontSize: '24px',
                 letterSpacing: '1px',
                 fontFamily: 'Amiri, Georgia, serif',
               }}
@@ -229,9 +220,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onScrollToDetails }) =
 
             {/* Invitation text */}
             <motion.p
-              className="text-[#f2e5c6] mb-6 opacity-90"
+              className="text-[#f2e5c6] mb-6 opacity-90 uppercase"
               style={{
-                fontSize: '15px',
+                fontSize: '12px',
                 letterSpacing: '0.5px',
                 lineHeight: '1.8',
               }}
@@ -248,16 +239,17 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onScrollToDetails }) =
             <motion.h1
               className="text-[#f2e5c6] mb-4"
               style={{
-                fontSize: '36px',
-                fontFamily: 'Georgia, serif',
-                fontStyle: 'italic',
+                fontSize: '66px',
+                fontFamily: "Fleur De Leah" ,
+                fontStyle: 'cursive',
                 letterSpacing: '1px',
+                lineHeight: 1.2
               }}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 1.3, duration: 1.2 }}
             >
-              Aisha & Omar
+              Hanim <br /> & <br />Nayeem
             </motion.h1>
 
             {/* Decorative divider */}
@@ -280,7 +272,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onScrollToDetails }) =
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.7, duration: 1 }}
             >
-              <p className="mb-2">Saturday, March 15th, 2026</p>
+              <p className="mb-2">Saturday, May 30th, 2026</p>
               <p className="opacity-80">4:00 PM</p>
             </motion.div>
 
