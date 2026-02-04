@@ -106,9 +106,6 @@ export const VenueSection: React.FC = () => {
           transition={{ delay: 0.4, duration: 1 }}
         >
           <div className="flex items-start mb-6">
-            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#d4af37]/20 flex items-center justify-center mr-4">
-              <MapPin className="w-5 h-5 text-[#d4af37]" />
-            </div>
             <div className="text-[#f2e5c6]">
               <h3
                 className="mb-2"
@@ -118,7 +115,7 @@ export const VenueSection: React.FC = () => {
                   letterSpacing: "0.5px",
                 }}
               >
-                Al-Noor Islamic Center
+                Glass House Beachfront
               </h3>
               <p
                 className="opacity-90"
@@ -127,11 +124,11 @@ export const VenueSection: React.FC = () => {
                   lineHeight: "1.8",
                 }}
               >
-                123 Peace Boulevard
+                10 Changi Coast Walk,
                 <br />
-                Madinah Gardens
+                National Service Resort & Country Club,
                 <br />
-                City, State 12345
+                Singapore 499739
               </p>
             </div>
           </div>
@@ -163,18 +160,17 @@ export const VenueSection: React.FC = () => {
         >
           <div className="relative w-full h-64 bg-[#560b18]/40 flex items-center justify-center">
             {/* Map placeholder - In a real app, this would be an embedded map */}
-            <iframe
-              src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik"
-              className="w-full h-full"
-              style={{ border: 0 }}
-              loading="lazy"
-              title="Venue location map"
-            />
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d31909.82991981746!2d103.96835074999997!3d1.3390617000000056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x31da23797fa342ef%3A0x13b8593768d2913e!2sGlass%20House%20Beachfront%2C%2010%20Changi%20Coast%20Walk%2C%20National%20Service%20Resort%20%26%20Country%20Club%2C%20Singapore%20499739!3m2!1d1.318536!2d103.97401359999999!5e0!3m2!1sen!2ssg!4v1770222823178!5m2!1sen!2ssg" 
+              width="600" 
+              height="450" 
+              loading="lazy">
+            </iframe>
             <div className="absolute inset-0 bg-[#3b010b]/10 pointer-events-none" />
           </div>
           <div className="bg-[#560b18]/60 backdrop-blur-sm p-4 text-center">
             <a
-              href="https://maps.google.com"
+              href="https://share.google/byNWJn36rWgWxOdxV"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[#d4af37] hover:text-[#f2e5c6] transition-colors"

@@ -11,6 +11,7 @@ export const RsvpSection: React.FC = () => {
   const [guestCount, setGuestCount] = useState<number>(1);
   const [notes, setNotes] = useState<string>("");
   const [submitted, setSubmitted] = useState(false);
+  const [name, setName] = useState<string>("");
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -36,7 +37,6 @@ export const RsvpSection: React.FC = () => {
 
 const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
-
   emailjs
     .sendForm(
       "service_vu8u9dk",
@@ -47,6 +47,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     .then(() => {
       setSubmitted(true);
 
+      // Reset after 3 seconds
       setTimeout(() => {
         setSubmitted(false);
       }, 3000);
@@ -55,6 +56,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
       setAttending(null);
       setGuestCount(1);
       setNotes("");
+      setName("");
     })
     .catch((error) => {
       console.error("EmailJS error:", error);
@@ -152,6 +154,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
                   name="guest_name"
                   className="w-full py-3 px-4 rounded-xl bg-[#3b010b]/60 text-[#f2e5c6] border border-[#d4af37]/30 focus:border-[#d4af37] focus:outline-none transition-all placeholder-[#f2e5c6]/40 resize-none"
                   required
+                  onChange={(e) => setName(e.target.value)}
                 />
 
                 <label
